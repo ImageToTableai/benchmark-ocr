@@ -1,8 +1,9 @@
 # benchmark-ocr
 
 Reproducible open-source OCR benchmark on public receipt datasets. Measures
-five OCR/document-parsing models against fixed test splits of SROIE 2019 and
-CORD v2, reporting CER/WER, field-extraction F1, latency, and cost.
+eight OCR/document-parsing models against fixed test splits of SROIE 2019 and
+CORD v2, reporting CER/WER, field-extraction F1 (regex and LLM postprocessing),
+latency, and cost.
 
 Every result is produced under a frozen protocol and traced to a versioned run
 artifact. No product, vendor, or commercial claim is made — this is a neutral
@@ -21,21 +22,39 @@ third-party benchmark.
 
 | Model | Version | Type |
 |-------|---------|------|
-| Tesseract | 5.3.4 | Classic OCR engine |
+| Tesseract | 5.3.4 | Classic OCR engine (CPU) |
 | PaddleOCR | 3.7.0 | Deep-learning OCR |
 | EasyOCR | 1.7.2 | Deep-learning OCR |
 | docTR | v1.0.1 | Neural OCR |
 | Docling | 2.119.0 | Document parser |
+| Surya2 | surya-ocr 0.22.1 | Document-parsing VLM |
+| Unlimited-OCR | vLLM-served | Document-parsing VLM |
+| PaddleOCR-VL | 1.6 | Document-parsing VLM |
 
-**Metrics**: CER, WER, field-value F1 (regex postprocessed), success rate,
-p50/p95 latency, wall-clock pages/min, cost per 1,000 pages — all with bootstrap
-95% confidence intervals.
+**Metrics**: CER, WER, field-value F1 (regex postprocessed), LLM field-value F1
+and accuracy (deepseek-v4-flash postprocessing), success rate, p50/p95 latency,
+wall-clock pages/min, cost per 1,000 pages — all with bootstrap 95% confidence
+intervals.
+
+## Published results
+
+Ready-to-use aggregated numbers ship in this repo:
+
+- `results/summary_metrics.csv` — 8 models × 2 datasets (16 rows): CER/WER,
+  field F1 (regex), latency p50/p95, cost per 1,000 pages, throughput.
+- `results/field_method_comparison.csv` — regex vs LLM field extraction side by
+  side (field-value accuracy/F1, document-fields-exact, latency, tokens).
+
+Both are derived from versioned `official` run artifacts; cite them at the
+file/model/dataset/metric level (e.g. `surya2` SROIE CER 0.191 in
+`results/summary_metrics.csv`).
 
 ## Directory layout
 
 ```text
 datasets/registry.yaml      # dataset metadata: source, license, GT type
 datasets/samples/*.jsonl    # fixed sample lists (image hashes + ground truth)
+results/                    # aggregated published metrics (CSV)
 scripts/run_<model>.py      # one runner per model
 eval/                       # CER/WER, field metrics, bootstrap CI, metrics CSV
 shared/                     # result schema + run-contract validation
