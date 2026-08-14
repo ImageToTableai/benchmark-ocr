@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use this benchmark in your research, please cite it using the metadata below."
+title: "benchmark-ocr: Reproducible Open-Source OCR Benchmark on Public Receipt Datasets"
+authors:
+  - name: "benchmark-ocr contributors"
+keywords:
+  - OCR
+  - character error rate
+  - word error rate
+  - document AI
+  - benchmark
+  - SROIE
+  - CORD
+license: MIT
+version: 0.1.0
+date-released: "2026-08-12"

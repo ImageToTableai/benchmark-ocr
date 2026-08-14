@@ -1,0 +1,30 @@
+# Secrets — never commit
+.env
+*.pem
+*_rsa
+*_ed25519
+id_rsa
+id_ed25519
+ssh_key
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+envs/
+
+# Data & outputs (raw datasets, model caches, and results stay local)
+datasets/raw/
+datasets/processed/
+datasets/downloads/
+results/*
+!results/summary_metrics.csv
+!results/field_method_comparison.csv
+outputs/
+**/results.db
+
+# Temp
+*.log
+.DS_Store

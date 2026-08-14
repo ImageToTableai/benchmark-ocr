@@ -1,0 +1,2 @@
+# Tesseract runner has no extra Python package dependency.
+# The tesseract binary is installed by server/install_model_env.sh when missing.

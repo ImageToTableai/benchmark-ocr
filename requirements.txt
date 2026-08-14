@@ -1,0 +1,8 @@
+# Minimal shared dependencies for lightweight benchmark scripts.
+# Model-specific runners should document and install their own extra packages.
+
+requests>=2.32
+Pillow>=10.0
+datasets>=3.0
+huggingface_hub>=0.26
+pyarrow>=16.0

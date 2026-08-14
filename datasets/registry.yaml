@@ -1,0 +1,30 @@
+# Dataset registry for the Receipt v1 benchmark.
+
+# Each entry records the public source, license, and the fixed sample file used
+# by the runners and evaluators. Raw images are NOT stored in this repository —
+# they are downloaded separately from the public source.
+
+datasets:
+  - id: sroie_2019
+    name: "SROIE 2019 (ICDAR 2019 Robust Reading Competition, Task 3)"
+    source: https://rrc.cvc.uab.es/?ch=13
+    repo: jsdnrs/ICDAR2019-SROIE   # Hugging Face mirror of the competition data
+    doc_type: receipt
+    language: en
+    synthetic: false
+    gt_type: [text, fields]        # line text + company/date/address/total
+    license: CC-BY-4.0
+    sample_file: datasets/samples/sroie_test_361.jsonl
+    downloader: scripts/prepare_sroie_samples.py
+
+  - id: cord_v2
+    name: "CORD v2 (Consolidated Receipt Dataset)"
+    source: https://github.com/clovaai/cord
+    repo: naver-clova-ix/cord-v2
+    doc_type: receipt
+    language: id
+    synthetic: false
+    gt_type: [text, boxes, fields] # nested menu line items + totals
+    license: CC-BY-4.0
+    sample_file: datasets/samples/cord_v2_test.jsonl
+    downloader: scripts/prepare_hf_dataset_samples.py
