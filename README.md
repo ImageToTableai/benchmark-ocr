@@ -13,10 +13,16 @@ third-party benchmark.
 
 **Datasets** (fixed test splits only):
 
-| Dataset | Split | Samples | Language |
-|---------|-------|--------:|----------|
-| SROIE 2019 (ICDAR 2019) | test | 361 | English receipts |
-| CORD v2 (Clova AI) | test | 100 | Indonesian receipts |
+| Dataset | Doc type | Split | Samples | Language | Ground truth | License |
+|---------|----------|-------|--------:|----------|--------------|---------|
+| SROIE 2019 (ICDAR 2019) | receipt | test | 361 | English | text + fields (`company`, `date`, `address`, `total`) | CC-BY-4.0 |
+| CORD v2 (Clova AI) | receipt | test | 100 | Indonesian | text + nested fields (`menu`, `sub_total`, `total`) | CC-BY-4.0 |
+
+Raw images are not stored in this repository — they are downloaded separately
+from the public sources recorded in `datasets/registry.yaml` (SROIE 2019 via
+<https://rrc.cvc.uab.es/?ch=13>, CORD v2 via <https://github.com/clovaai/cord>).
+Only the `test` split is used for scoring; the `train` split is retained for
+inspection/calibration and never evaluated.
 
 **Models** (out-of-the-box, no fine-tuning):
 
