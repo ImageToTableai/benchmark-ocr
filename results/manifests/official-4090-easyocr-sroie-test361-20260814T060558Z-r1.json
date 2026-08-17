@@ -1,11 +1,11 @@
 {
   "cost": {
     "gpu_hourly_usd": 0.76,
-    "gpu_label": "rtx4090-vllm",
+    "gpu_label": "rtx4090-pytorch",
     "gpu_provider": "runpod",
-    "price_recorded_at_utc": "2026-08-13T08:00:00Z"
+    "price_recorded_at_utc": "2026-08-14T00:00:00Z"
   },
-  "created_at_utc": "2026-08-13T13:17:15.277523+00:00",
+  "created_at_utc": "2026-08-14T06:58:54.401001+00:00",
   "data": {
     "dataset_ids": [
       "sroie_2019"
@@ -19,7 +19,6 @@
       "test"
     ]
   },
-  "drift_note": "Run executed on the drifted A4500 leftover env (torch 2.5.1+cu121 / torchvision 0.20.1+cu121) before easyocr was reinstalled on system torch 2.8.0+cu128. Final v1 easyocr SROIE data is results/receipt-v1-sroie-easyocr (torch 2.8.0+cu128); this manifest is retained for provenance only.",
   "evaluation": {
     "evaluator_sha256": "6cdbc5d33e8600ab610316bb7a38a994410360210ab26b86254ec2fea1c9b8dd",
     "field_postprocessor": "sroie_receipt_regex"
@@ -29,26 +28,26 @@
     "key_versions": {
       "docling": null,
       "easyocr": "1.7.2",
-      "numpy": "2.4.4",
+      "numpy": "2.1.2",
       "opencv-python": null,
       "paddleocr": null,
       "paddlepaddle": null,
       "paddlepaddle-gpu": null,
       "paddlex": null,
-      "pillow": "12.2.0",
+      "pillow": "11.0.0",
       "python-doctr": null,
       "surya-ocr": null,
-      "torch": "2.5.1+cu121",
-      "torchaudio": null,
-      "torchvision": "0.20.1+cu121"
+      "torch": "2.8.0+cu128",
+      "torchaudio": "2.8.0+cu128",
+      "torchvision": "0.23.0+cu128"
     },
-    "pip_freeze_package_count": 40,
-    "pip_freeze_sha256": "a870d437881ae617dfff2760edc4b7243ad336f11be7d088f0b8d83e29f54f5a"
+    "pip_freeze_package_count": 150,
+    "pip_freeze_sha256": "0647f0916a97e5776d3b8212b173b815abcb5bc5ad9d547508d95acc80c45678"
   },
   "performance": {
     "measurement_mode": "warm_then_scored",
-    "run_wall_time_ms": 350792,
-    "sha256": "26887a160a1d7a35bbea9ebc38ba5114181b4ab5eeb4c8adbcf1e75ae4640494"
+    "run_wall_time_ms": 187796,
+    "sha256": "95ace0d6ddb60c521a056fb4fb5ddb64be3b38bea74fc0da0300cc72dcd9c7c1"
   },
   "predictions": {
     "missing_prediction_count": 0,
@@ -59,26 +58,26 @@
       "easyocr"
     ],
     "prediction_count": 361,
-    "sha256": "935b6f338b58d824d2d9e302b31b17ab953e3787a3cb2290a294d548f3cb7c85"
+    "sha256": "4c5d32ce1e94fee2b32361564ea0bccadef1a63dacdcd2594f50d4514e91985a"
   },
   "redaction_note": "Internal-only fields (hostname, GPU UUID, absolute storage paths, git state) removed for public release.",
-  "run_id": "official-4090-easyocr-sroie-test361-20260813T080000Z",
+  "run_id": "official-4090-easyocr-sroie-test361-20260814T060558Z-r1",
   "run_tier": "official",
   "runner": {
-    "command": "$BENCHMARK_PERSIST/envs/easyocr/bin/python scripts/run_easyocr.py (4090 re-run)",
+    "command": "$BENCHMARK_PERSIST/envs/easyocr/bin/python scripts/run_easyocr.py (repeat)",
     "model": "easyocr",
-    "sha256": "7d9ebd4167d2a1b2626975c7c1ccceb6982536b3c3aec4fa3dff31fe03a9ce2d"
+    "sha256": "861e65de802cb0dc7ad5acf87ede0f4144bff5c0190a94ee486d096f045abbbd"
   },
   "runtime": {
     "cuda_available": true,
-    "gpu": "NVIDIA GeForce RTX 4090, 580.159.03, 24564 MiB",
+    "gpu": "NVIDIA GeForce RTX 4090, 580.159.04, 24564 MiB",
     "machine": "x86_64",
-    "platform": "Linux-6.8.0-111-generic-x86_64-with-glibc2.39",
+    "platform": "Linux-6.8.0-124-generic-x86_64-with-glibc2.39",
     "processor": "x86_64",
     "python_implementation": "CPython",
     "python_version": "3.12.3",
-    "torch_cuda_version": "12.1",
-    "torch_version": "2.5.1+cu121"
+    "torch_cuda_version": "12.8",
+    "torch_version": "2.8.0+cu128"
   },
   "schema_version": 2
 }
