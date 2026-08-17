@@ -1,0 +1,83 @@
+{
+  "cost": {
+    "gpu_hourly_usd": 0.76,
+    "gpu_label": "rtx4090-vllm",
+    "gpu_provider": "runpod",
+    "price_recorded_at_utc": "2026-08-12T08:36:00Z"
+  },
+  "created_at_utc": "2026-08-12T09:17:01.895438+00:00",
+  "data": {
+    "dataset_ids": [
+      "sroie_2019"
+    ],
+    "dataset_registry_path": "datasets/registry.yaml",
+    "dataset_registry_sha256": "be674d06271ce5706ac5162afd7db3a65d3a794fcf293b7a426422a8a06a797d",
+    "missing_source_split_count": 0,
+    "sample_count": 361,
+    "samples_sha256": "73096db6a5d14d1c6a72ec6a46ef32e6bec3289c0a62a69f0f4e45a71ec50987",
+    "source_splits": [
+      "test"
+    ]
+  },
+  "evaluation": {
+    "evaluator_sha256": "ec7755d2020ccd1d03befc91158e1a19d26c7b7da232b713d0aed18d492226df",
+    "field_postprocessor": "sroie_receipt_regex"
+  },
+  "expected_split": "test",
+  "packages": {
+    "key_versions": {
+      "docling": null,
+      "easyocr": null,
+      "numpy": "2.2.6",
+      "opencv-python": null,
+      "paddleocr": null,
+      "paddlepaddle": null,
+      "paddlepaddle-gpu": null,
+      "paddlex": null,
+      "pillow": "10.4.0",
+      "python-doctr": null,
+      "surya-ocr": "0.22.1",
+      "torch": "2.13.0+cu130",
+      "torchaudio": "2.11.0+cu130",
+      "torchvision": "0.28.0+cu130"
+    },
+    "pip_freeze_package_count": 280,
+    "pip_freeze_sha256": "a2165ba675d2d5a2dc8f0dfe62546e8e6920482b97d9258fcdd8c103f426185a"
+  },
+  "performance": {
+    "measurement_mode": "cold_end_to_end",
+    "run_wall_time_ms": 1814058,
+    "sha256": "ac08a67574186768d76179a78881b9f5fe7e83e57bf1adaedc0aad31735fffb6"
+  },
+  "predictions": {
+    "missing_prediction_count": 0,
+    "model_versions": [
+      "0.22.1"
+    ],
+    "models": [
+      "surya2"
+    ],
+    "prediction_count": 361,
+    "sha256": "a4a4312f47f4dda6e5c681bc1cac7c9e9f7e6ddf4abe4d737c9930115e5b548c"
+  },
+  "redaction_note": "Internal-only fields (hostname, GPU UUID, absolute storage paths, git state) removed for public release.",
+  "run_id": "official-candidate-surya2-sroie-test361-vllm-20260812T0836Z",
+  "run_tier": "official",
+  "runner": {
+    "command": "$BENCHMARK_PERSIST/envs/surya2/bin/python scripts/run_surya2.py --run-id official-candidate-surya2-sroie-test361-vllm-20260812T0836Z --samples $BENCHMARK_PERSIST/datasets/samples/sroie_test_361.jsonl --out $BENCHMARK_PERSIST/results/official-candidate-surya2-sroie-test361-vllm-20260812T0836Z/surya2_predictions.jsonl",
+    "model": "surya2",
+    "sha256": "23d00213d9c821f0191bc2f2c5b44957be077307c1e5a24b572310d3429ecee2"
+  },
+  "runtime": {
+    "cuda_available": true,
+    "gpu": "NVIDIA GeForce RTX 4090, 580.159.03, 24564 MiB",
+    "machine": "x86_64",
+    "platform": "Linux-6.8.0-111-generic-x86_64-with-glibc2.35",
+    "processor": "x86_64",
+    "python_implementation": "CPython",
+    "python_version": "3.12.13",
+    "torch_cuda_version": "13.0",
+    "torch_version": "2.13.0+cu130"
+  },
+  "schema_version": 2
+}

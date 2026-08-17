@@ -22,6 +22,9 @@ datasets/downloads/
 results/*
 !results/summary_metrics.csv
 !results/field_method_comparison.csv
+!results/README.md
+!results/manifests/
+!results/manifests/*.json
 outputs/
 **/results.db
 

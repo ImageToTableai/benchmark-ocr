@@ -34,9 +34,8 @@ Excluded from the public core:
 - Private or unpublished document collections.
 - DocILE, unless legal/use scope changes. Current known scope is
   non-commercial research only.
-- FUNSD public-core results; keep it internal/research-only if used.
-- Vietnamese OCR supplemental data; keep it outside Receipt v1 because it is
-  text-only and partly synthetic.
+- FUNSD form-understanding data (non-commercial research license).
+- Vietnamese OCR text-only data (partly synthetic).
 - Labels-only datasets without images.
 
 ## Official Dataset Files
@@ -56,7 +55,7 @@ with scored samples.
 
 ## Official Model Set
 
-Receipt v1 first batch contains the current non-vLLM local group:
+Receipt v1 covers eight models across two execution tracks:
 
 | Model ID | Runner | Track | Official v1 role |
 | --- | --- | --- | --- |
@@ -65,15 +64,13 @@ Receipt v1 first batch contains the current non-vLLM local group:
 | `easyocr` | `scripts/run_easyocr.py` | local | Classic OCR baseline. |
 | `doctr` | `scripts/run_doctr.py` | local | Neural OCR baseline. |
 | `docling` | `scripts/run_docling.py` | local | Document parser baseline. |
-| `paddleocr_vl` | `scripts/run_paddleocr_vl.py` | local | VLM OCR/document parser baseline without vLLM. |
+| `surya2` | `scripts/run_surya2.py` | vllm | Document-parsing VLM. |
+| `unlimited_ocr` | `scripts/run_unlimited_ocr.py` | vllm | Document-parsing VLM. |
+| `paddleocr_vl_vllm` | `scripts/run_paddleocr_vl_vllm.py` | vllm | Document-parsing VLM. |
 
-Separate later batch:
-
-- `surya2`
-- `unlimited_ocr`
-
-These require a vLLM/server image or external OpenAI-compatible backend and do
-not block Receipt v1.
+The vLLM models (`surya2`, `unlimited_ocr`, `paddleocr_vl_vllm`) run against a
+vLLM/server image or an external OpenAI-compatible backend; the local models run
+in the standard Torch/CUDA environment.
 
 ## Formal GPU
 
@@ -144,7 +141,7 @@ Run SROIE:
 
 ```bash
 export BENCHMARK_FIELD_POSTPROCESSOR=sroie_receipt_regex
-for model in tesseract paddleocr easyocr doctr docling paddleocr_vl; do
+for model in tesseract paddleocr easyocr doctr docling; do
   BENCHMARK_WARMUP_SAMPLES="$BENCHMARK_DATASETS/samples/sroie_warmup_5.jsonl" \
     bash server/run_model.sh "$model" sroie 361 "receipt-v1-sroie-${model}"
 done
@@ -155,7 +152,7 @@ Run CORD v2 after confirming the exact fixed test count:
 ```bash
 unset BENCHMARK_FIELD_POSTPROCESSOR
 CORD_COUNT="$(wc -l < "$BENCHMARK_DATASETS/samples/cord_v2_test.jsonl")"
-for model in tesseract paddleocr easyocr doctr docling paddleocr_vl; do
+for model in tesseract paddleocr easyocr doctr docling; do
   BENCHMARK_WARMUP_SAMPLES="$BENCHMARK_DATASETS/samples/cord_v2_warmup_5.jsonl" \
     bash server/run_model.sh "$model" cord_v2 "$CORD_COUNT" "receipt-v1-cord-v2-${model}"
 done

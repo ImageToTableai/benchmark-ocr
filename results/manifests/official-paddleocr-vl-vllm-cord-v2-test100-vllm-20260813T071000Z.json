@@ -1,0 +1,81 @@
+{
+  "cost": {
+    "gpu_hourly_usd": 0.76,
+    "gpu_label": "rtx4090-vllm",
+    "gpu_provider": "runpod",
+    "price_recorded_at_utc": "2026-08-13T07:10:00Z"
+  },
+  "created_at_utc": "2026-08-13T07:20:51.435635+00:00",
+  "data": {
+    "dataset_ids": [
+      "cord_v2"
+    ],
+    "dataset_registry_path": "datasets/registry.yaml",
+    "dataset_registry_sha256": "be674d06271ce5706ac5162afd7db3a65d3a794fcf293b7a426422a8a06a797d",
+    "missing_source_split_count": 0,
+    "sample_count": 100,
+    "samples_sha256": "d12798abda54386d974c4c20692e9221db8d7f5be7aeb2ff2b8815947b4b48a2",
+    "source_splits": [
+      "test"
+    ]
+  },
+  "evaluation": {
+    "evaluator_sha256": "6cdbc5d33e8600ab610316bb7a38a994410360210ab26b86254ec2fea1c9b8dd",
+    "field_postprocessor": "cord_receipt_regex"
+  },
+  "expected_split": "test",
+  "packages": {
+    "key_versions": {
+      "docling": null,
+      "easyocr": null,
+      "numpy": "2.5.2",
+      "opencv-python": null,
+      "paddleocr": null,
+      "paddlepaddle": null,
+      "paddlepaddle-gpu": null,
+      "paddlex": null,
+      "pillow": "12.3.0",
+      "python-doctr": null,
+      "surya-ocr": null,
+      "torch": null,
+      "torchaudio": null,
+      "torchvision": null
+    },
+    "pip_freeze_package_count": 48,
+    "pip_freeze_sha256": "38cbead4556070fb0799b6b10ad3cc8138355e9f4ed4c4c53ab0f2e2af1e275c"
+  },
+  "performance": {
+    "measurement_mode": "cold_end_to_end",
+    "run_wall_time_ms": 114120,
+    "sha256": "a1fcdcdc44ae66f0ac2f02f33f9c96028b61752820699a74b35766cca0871c08"
+  },
+  "predictions": {
+    "missing_prediction_count": 0,
+    "model_versions": [
+      "PaddlePaddle/PaddleOCR-VL-1.6"
+    ],
+    "models": [
+      "paddleocr_vl_vllm"
+    ],
+    "prediction_count": 100,
+    "sha256": "94c554c856979f5541a35434302e8925dca1009eee8f995541034efe48f796b6"
+  },
+  "redaction_note": "Internal-only fields (hostname, GPU UUID, absolute storage paths, git state) removed for public release.",
+  "run_id": "official-paddleocr-vl-vllm-cord-v2-test100-vllm-20260813T071000Z",
+  "run_tier": "official",
+  "runner": {
+    "command": "$BENCHMARK_PERSIST/envs/unlimited_ocr/bin/python scripts/run_paddleocr_vl_vllm.py (resume-aware)",
+    "model": "paddleocr_vl_vllm",
+    "sha256": "c8b1b119ac039ee0d7fc96ad39fe7122829a359180f15e92312cfec72842875a"
+  },
+  "runtime": {
+    "gpu": "NVIDIA GeForce RTX 4090, 580.126.20, 24564 MiB",
+    "machine": "x86_64",
+    "platform": "Linux-6.8.0-106-generic-x86_64-with-glibc2.35",
+    "processor": "x86_64",
+    "python_implementation": "CPython",
+    "python_version": "3.12.13",
+    "torch_version": null
+  },
+  "schema_version": 2
+}

@@ -1,0 +1,81 @@
+{
+  "cost": {
+    "gpu_hourly_usd": 0.76,
+    "gpu_label": "rtx4090-vllm",
+    "gpu_provider": "runpod",
+    "price_recorded_at_utc": "2026-08-13T03:21:00Z"
+  },
+  "created_at_utc": "2026-08-13T04:13:20.517511+00:00",
+  "data": {
+    "dataset_ids": [
+      "cord_v2"
+    ],
+    "dataset_registry_path": "datasets/registry.yaml",
+    "dataset_registry_sha256": "be674d06271ce5706ac5162afd7db3a65d3a794fcf293b7a426422a8a06a797d",
+    "missing_source_split_count": 0,
+    "sample_count": 100,
+    "samples_sha256": "d12798abda54386d974c4c20692e9221db8d7f5be7aeb2ff2b8815947b4b48a2",
+    "source_splits": [
+      "test"
+    ]
+  },
+  "evaluation": {
+    "evaluator_sha256": "6cdbc5d33e8600ab610316bb7a38a994410360210ab26b86254ec2fea1c9b8dd",
+    "field_postprocessor": "cord_receipt_regex"
+  },
+  "expected_split": "test",
+  "packages": {
+    "key_versions": {
+      "docling": null,
+      "easyocr": null,
+      "numpy": "2.5.2",
+      "opencv-python": null,
+      "paddleocr": null,
+      "paddlepaddle": null,
+      "paddlepaddle-gpu": null,
+      "paddlex": null,
+      "pillow": "12.3.0",
+      "python-doctr": null,
+      "surya-ocr": null,
+      "torch": null,
+      "torchaudio": null,
+      "torchvision": null
+    },
+    "pip_freeze_package_count": 48,
+    "pip_freeze_sha256": "38cbead4556070fb0799b6b10ad3cc8138355e9f4ed4c4c53ab0f2e2af1e275c"
+  },
+  "performance": {
+    "measurement_mode": "cold_end_to_end",
+    "run_wall_time_ms": 97699,
+    "sha256": "a466cfa9e76e4c386cc355ecddf2814bd6cc8a5183e5968c21caedc6aaf8c9e8"
+  },
+  "predictions": {
+    "missing_prediction_count": 0,
+    "model_versions": [
+      "baidu/Unlimited-OCR"
+    ],
+    "models": [
+      "unlimited_ocr"
+    ],
+    "prediction_count": 100,
+    "sha256": "b84616ebbbac0942522d6c57e6aa6ea6c1368f1c51005622bf7f4f5702654b9a"
+  },
+  "redaction_note": "Internal-only fields (hostname, GPU UUID, absolute storage paths, git state) removed for public release.",
+  "run_id": "official-unlimited-ocr-cord-v2-test100-vllm-20260813T032148Z",
+  "run_tier": "official",
+  "runner": {
+    "command": "cord_receipt_regex postprocessor",
+    "model": "unlimited_ocr",
+    "sha256": "03d00bcf95a0ea55bbf6cbcb269b359eab0ef854bc2d2746e096e388042cc661"
+  },
+  "runtime": {
+    "gpu": "NVIDIA GeForce RTX 4090, 580.126.20, 24564 MiB",
+    "machine": "x86_64",
+    "platform": "Linux-6.8.0-106-generic-x86_64-with-glibc2.35",
+    "processor": "x86_64",
+    "python_implementation": "CPython",
+    "python_version": "3.12.13",
+    "torch_version": null
+  },
+  "schema_version": 2
+}

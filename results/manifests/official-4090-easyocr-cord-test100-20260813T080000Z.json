@@ -1,0 +1,83 @@
+{
+  "cost": {
+    "gpu_hourly_usd": 0.76,
+    "gpu_label": "rtx4090-vllm",
+    "gpu_provider": "runpod",
+    "price_recorded_at_utc": "2026-08-13T08:00:00Z"
+  },
+  "created_at_utc": "2026-08-13T15:00:23.577240+00:00",
+  "data": {
+    "dataset_ids": [
+      "cord_v2"
+    ],
+    "dataset_registry_path": "datasets/registry.yaml",
+    "dataset_registry_sha256": "be674d06271ce5706ac5162afd7db3a65d3a794fcf293b7a426422a8a06a797d",
+    "missing_source_split_count": 0,
+    "sample_count": 100,
+    "samples_sha256": "d12798abda54386d974c4c20692e9221db8d7f5be7aeb2ff2b8815947b4b48a2",
+    "source_splits": [
+      "test"
+    ]
+  },
+  "evaluation": {
+    "evaluator_sha256": "6cdbc5d33e8600ab610316bb7a38a994410360210ab26b86254ec2fea1c9b8dd",
+    "field_postprocessor": "cord_receipt_regex"
+  },
+  "expected_split": "test",
+  "packages": {
+    "key_versions": {
+      "docling": null,
+      "easyocr": "1.7.2",
+      "numpy": "2.1.2",
+      "opencv-python": null,
+      "paddleocr": null,
+      "paddlepaddle": null,
+      "paddlepaddle-gpu": null,
+      "paddlex": null,
+      "pillow": "11.0.0",
+      "python-doctr": null,
+      "surya-ocr": null,
+      "torch": "2.8.0+cu128",
+      "torchaudio": "2.8.0+cu128",
+      "torchvision": "0.23.0+cu128"
+    },
+    "pip_freeze_package_count": 150,
+    "pip_freeze_sha256": "0647f0916a97e5776d3b8212b173b815abcb5bc5ad9d547508d95acc80c45678"
+  },
+  "performance": {
+    "measurement_mode": "warm_then_scored",
+    "run_wall_time_ms": 40872,
+    "sha256": "e4ca4a47ba637230aa1e841b091de2f95919bfd3a89185df18c9ebe4895e7686"
+  },
+  "predictions": {
+    "missing_prediction_count": 0,
+    "model_versions": [
+      "1.7.2"
+    ],
+    "models": [
+      "easyocr"
+    ],
+    "prediction_count": 100,
+    "sha256": "4d155d7a33bc2772e1d714c2352af5a4cedd0a63d3154b2d3c88c91675ad11a8"
+  },
+  "redaction_note": "Internal-only fields (hostname, GPU UUID, absolute storage paths, git state) removed for public release.",
+  "run_id": "official-4090-easyocr-cord-test100-20260813T080000Z",
+  "run_tier": "official",
+  "runner": {
+    "command": "$BENCHMARK_PERSIST/envs/easyocr/bin/python scripts/run_easyocr.py (4090 re-run)",
+    "model": "easyocr",
+    "sha256": "861e65de802cb0dc7ad5acf87ede0f4144bff5c0190a94ee486d096f045abbbd"
+  },
+  "runtime": {
+    "cuda_available": true,
+    "gpu": "NVIDIA GeForce RTX 4090, 580.159.03, 24564 MiB",
+    "machine": "x86_64",
+    "platform": "Linux-6.8.0-111-generic-x86_64-with-glibc2.39",
+    "processor": "x86_64",
+    "python_implementation": "CPython",
+    "python_version": "3.12.3",
+    "torch_cuda_version": "12.8",
+    "torch_version": "2.8.0+cu128"
+  },
+  "schema_version": 2
+}

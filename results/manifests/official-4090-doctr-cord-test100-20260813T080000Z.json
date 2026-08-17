@@ -1,0 +1,83 @@
+{
+  "cost": {
+    "gpu_hourly_usd": 0.76,
+    "gpu_label": "rtx4090-vllm",
+    "gpu_provider": "runpod",
+    "price_recorded_at_utc": "2026-08-13T08:00:00Z"
+  },
+  "created_at_utc": "2026-08-13T15:16:59.292441+00:00",
+  "data": {
+    "dataset_ids": [
+      "cord_v2"
+    ],
+    "dataset_registry_path": "datasets/registry.yaml",
+    "dataset_registry_sha256": "be674d06271ce5706ac5162afd7db3a65d3a794fcf293b7a426422a8a06a797d",
+    "missing_source_split_count": 0,
+    "sample_count": 100,
+    "samples_sha256": "d12798abda54386d974c4c20692e9221db8d7f5be7aeb2ff2b8815947b4b48a2",
+    "source_splits": [
+      "test"
+    ]
+  },
+  "evaluation": {
+    "evaluator_sha256": "6cdbc5d33e8600ab610316bb7a38a994410360210ab26b86254ec2fea1c9b8dd",
+    "field_postprocessor": "cord_receipt_regex"
+  },
+  "expected_split": "test",
+  "packages": {
+    "key_versions": {
+      "docling": null,
+      "easyocr": null,
+      "numpy": "2.1.2",
+      "opencv-python": "4.14.0.94",
+      "paddleocr": null,
+      "paddlepaddle": null,
+      "paddlepaddle-gpu": null,
+      "paddlex": null,
+      "pillow": "11.0.0",
+      "python-doctr": "1.0.1",
+      "surya-ocr": null,
+      "torch": "2.8.0+cu128",
+      "torchaudio": "2.8.0+cu128",
+      "torchvision": "0.23.0+cu128"
+    },
+    "pip_freeze_package_count": 163,
+    "pip_freeze_sha256": "9fa794968914e04ec2c655e6dbf6021cdba1a8d10dd6bf61ddcc583afa3f06ac"
+  },
+  "performance": {
+    "measurement_mode": "warm_then_scored",
+    "run_wall_time_ms": 44464,
+    "sha256": "cc028060bc82813583e9ccb0d5a1a1af0685c00a26440616ea62781a98453186"
+  },
+  "predictions": {
+    "missing_prediction_count": 0,
+    "model_versions": [
+      "v1.0.1"
+    ],
+    "models": [
+      "doctr"
+    ],
+    "prediction_count": 100,
+    "sha256": "ae57d4f1d8a556a1c2e17cce4fac9f65a82c5f8267fc22f5ad76def4791a3c98"
+  },
+  "redaction_note": "Internal-only fields (hostname, GPU UUID, absolute storage paths, git state) removed for public release.",
+  "run_id": "official-4090-doctr-cord-test100-20260813T080000Z",
+  "run_tier": "official",
+  "runner": {
+    "command": "$BENCHMARK_PERSIST/envs/doctr/bin/python scripts/run_doctr.py (4090 re-run)",
+    "model": "doctr",
+    "sha256": "ddf7d29793cf57c35c9d6bc16c8b0a60d96f5e571e5cd51cebf3a7fa0122e95f"
+  },
+  "runtime": {
+    "cuda_available": true,
+    "gpu": "NVIDIA GeForce RTX 4090, 580.159.03, 24564 MiB",
+    "machine": "x86_64",
+    "platform": "Linux-6.8.0-111-generic-x86_64-with-glibc2.39",
+    "processor": "x86_64",
+    "python_implementation": "CPython",
+    "python_version": "3.12.3",
+    "torch_cuda_version": "12.8",
+    "torch_version": "2.8.0+cu128"
+  },
+  "schema_version": 2
+}
