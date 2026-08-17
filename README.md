@@ -50,9 +50,13 @@ Ready-to-use aggregated numbers ship in this repo:
   field F1 (regex), latency p50/p95, cost per 1,000 pages, throughput.
 - `results/field_method_comparison.csv` — regex vs LLM field extraction side by
   side (field-value accuracy/F1, document-fields-exact, latency, tokens).
+- `results/manifests/*.json` — one redacted `manifest.json` per published run
+  (16 runs). Each records the run id, model version, runner-script hash, GPU
+  model/driver, torch/CUDA versions, Python version, pip-freeze hash, cost
+  metadata, measurement mode, and artifact hashes (prediction/metrics/perf).
 
-Both are derived from versioned `official` run artifacts; cite them at the
-file/model/dataset/metric level (e.g. `surya2` SROIE CER 0.191 in
+Both CSVs are derived from these versioned `official` run artifacts; cite them
+at the file/model/dataset/metric level (e.g. `surya2` SROIE CER 0.191 in
 `results/summary_metrics.csv`).
 
 ## Directory layout
@@ -60,7 +64,7 @@ file/model/dataset/metric level (e.g. `surya2` SROIE CER 0.191 in
 ```text
 datasets/registry.yaml      # dataset metadata: source, license, GT type
 datasets/samples/*.jsonl    # fixed sample lists (image hashes + ground truth)
-results/                    # aggregated published metrics (CSV)
+results/                    # published metrics CSV + redacted run manifests
 scripts/run_<model>.py      # one runner per model
 eval/                       # CER/WER, field metrics, bootstrap CI, metrics CSV
 shared/                     # result schema + run-contract validation
@@ -137,6 +141,10 @@ It defines the fixed sample files, the model set, measurement rules
 artifact quality audit at
 [`reports/artifact_quality_audit_2026-08-12.md`](reports/artifact_quality_audit_2026-08-12.md)
 documents data-integrity checks over the released predictions.
+
+Each of the 16 published rows maps to a redacted `manifest.json` under
+`results/manifests/`, so every number can be traced to the exact run, model
+version, code hash, and runtime that produced it.
 
 ## Citing
 
